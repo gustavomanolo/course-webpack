@@ -17,10 +17,12 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "../dist"),
+    publicPath: '../dist/', // Fix to searh for "video .mp4 files"
     filename: "js/[name].js"
   },
   module: {
     rules: [
+      // Rule to be able to include ".CSS"
       {
         test: /\.css$/,
         use: [
@@ -35,6 +37,7 @@ module.exports = {
           "css-loader"
         ]
       },
+      // Rule to use "BabelJS"
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
@@ -44,6 +47,19 @@ module.exports = {
             presets: ["@babel/preset-env"]
           }
         }
+      },
+      // Rule to "include images" and other files
+      {
+        test: /\.(png|jpg|gif|woff|eot|ttf|svg|mp4)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 20192,
+              name: "assets/[name].[hash].[ext]"
+            }
+          }
+        ]
       }
     ]
   },
