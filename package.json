@@ -12,7 +12,9 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-template-literals": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^2.0.1",
     "file-loader": "^3.0.1",
@@ -22,5 +24,9 @@
     "webpack": "^4.28.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   }
 }

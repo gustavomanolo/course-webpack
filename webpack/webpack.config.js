@@ -17,7 +17,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "../dist"),
-    publicPath: '../dist/', // Fix to searh for "video .mp4 files"
+    publicPath: "../dist/", // Fix to searh for "video .mp4 files"
     filename: "js/[name].js"
   },
   module: {
@@ -39,13 +39,13 @@ module.exports = {
       },
       // Rule to use "BabelJS"
       {
-        test: /\.m?js$/,
+        test: /\.m?(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"]
-          }
+          loader: "babel-loader"
+          // options: {
+          //   presets: ["@babel/preset-env", "@babel/preset-react"]
+          // }
         }
       },
       // Rule to "include images" and other files
