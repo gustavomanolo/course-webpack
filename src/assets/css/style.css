@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
   margin: 0;
   font-size: 40px;
-  background-image: url('../img/nba.png');
+  /* background-image: url('../img/nba.png'); */
   font-family: 'open_sansregular';
   flex-direction: column;
 }

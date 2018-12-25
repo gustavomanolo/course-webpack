@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: {
@@ -71,5 +72,11 @@ module.exports = {
       chunkFilename: "[id].css"
     })
     // "@babel/plugin-proposal-object-rest-spread"
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      name: 'common',
+      chunks: 'initial'
+    }
+  }
 };
